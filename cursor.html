@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>change cursor hover effect</title>
+        <link rel="stylesheet" type="text/css" href="text.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  </head>
+    <body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index02.html">陰</a></li>
+            <li><a href="index03.html">礼</a></li>
+            <li><a href="index04.html">翳</a></li>
+            <li><a href="index05.html">讃</a></li>
+            <div class="cursor"></div>
+        </ul>
+        <script>
+            let cursor = document.querySelector('.cursor');
+            document.addEventListener('mousemove', (e) =>{
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + 'px';
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,100&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(80deg, rgb(250, 244, 202), rgb(255, 255, 255));
+    overflow: auto;
+    font-family: 'raleway', sans-serif;
+}
+
+.switch {
+    z-index: 1000; 
+    text-align: center; /* Center align the content */
+    margin-top: 0px; /* Adjust margin as needed */
+}
+
+.switch a {
+    display: inline-block; /* Make the anchor element inline-block */
+    text-decoration: none;
+}
+
+body {
+    font-family: 'raleway', sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.text-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.5s ease;
+}
+
+.text-container:hover {
+    opacity: 1; /* Show the text on hover */
+}
+
+p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+#up {
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, rgb(153, 0, 0), rgb(22, 67, 108));
+    filter: blur(80px);
+    animation: down 40s infinite;
+}
+
+#down {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, rgb(100, 220, 255), rgb(153, 0, 0));
+    filter: blur(80px);
+    animation: up 30s infinite;
+}
+
+#left {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, rgb(26, 248, 18, 0.6), rgb(199, 10, 52, 0.8));
+    filter: blur(80px);
+    animation: left 30s 1s infinite;
+}
+
+#right {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(80deg, rgb(153, 0, 0), rgb(2, 67, 108));
+    filter: blur(80px);
+    animation: right 40s 0.5s infinite;
+}
+
+@keyframes down {
+    0%, 100% {
+        top: -100px;
+    }
+    70% {
+        top: 700px;
+    }
+}
+
+@keyframes up {
+    0%, 100% {
+        bottom: -100px;
+    }
+    70% {
+        bottom: 700px;
+    }
+}
+
+@keyframes left {
+    0%, 100% {
+        left: -100px;
+    }
+    70% {
+        left: 1300;
+    }
+}
+
+@keyframes right {
+    0%, 100% {
+        right: -100px;
+    }
+    70% {
+        right: 1300px;
+    }
+}
+
+.nav-wrapper {
+    z-index: 1000; /* Adjusted z-index */
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 50px; /* Added unit (px) */
+    left: 0;
+}
+
+nav {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-around; 
+    align-items: flex-start; 
+}
+
+.hover-this {
+    transition: all 0.3s ease;
+}
+
+.paragraph-container {
+    margin-top: 20px; /* Adjusted margin-top value */
+    padding: 200px;
+    position: relative;
+    z-index: 1; 
+}
+
+#up, #down, #left, #right {
+    z-index: 0; /* Set a lower z-index to send the sections to the back */
+}
+
+span {
+    display: inline-block;
+    font-family: 'raleway', sans-serif;;
+    font-weight: 300;
+    color: #fff; /* Change text color to white */
+    font-size: 64px;
+    text-transform: uppercase;
+    pointer-events: none;
+    transition: transform 0.1s linear;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: transform 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+    transform: translate(-50%, -50%) scale(8);
+}
+
+@media(min-width: 900px) {
+    nav {
+          display: flex;
+          justify-content: space-around;
+    }
+}
+
+@media(max-width: 900px) {
+    nav {
+          top: 30%;
+    }
+
+    .hover-this {
+          width: 100%;
+          padding: 20px 0;
+          display: inline-block;
+    }
+}
